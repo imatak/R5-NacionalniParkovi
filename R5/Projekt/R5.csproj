@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\SQLite.3.13.0\build\net45\SQLite.props" Condition="Exists('..\packages\SQLite.3.13.0\build\net45\SQLite.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{B2CAF80C-A60C-42B7-9EFD-5FFFAEBCA390}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Projekt</RootNamespace>
+    <AssemblyName>Projekt</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="gtk-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="gdk-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="glib-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="glade-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="pango-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="atk-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Mono.Posix, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="Mono.Data.Sqlite">
+      <HintPath>..\packages\Mono.Data.Sqlite.Portable.1.0.3.5\lib\net4\Mono.Data.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Portable">
+      <HintPath>..\packages\Mono.Data.Sqlite.Portable.1.0.3.5\lib\net4\System.Data.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions.Portable">
+      <HintPath>..\packages\Mono.Data.Sqlite.Portable.1.0.3.5\lib\net4\System.Transactions.Portable.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="gtk-gui\gui.stetic">
+      <LogicalName>gui.stetic</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\280px-NP_Risnjak_-_pogled_02.jpg" />
+    <EmbeddedResource Include="Images\Krka-waterfalls.jpg" />
+    <EmbeddedResource Include="Images\620x349.jpg" />
+    <EmbeddedResource Include="Images\Nationalpark_Paklenica_Schlucht.JPG" />
+    <EmbeddedResource Include="Images\kornati.jpg" />
+    <EmbeddedResource Include="Images\mljet.jpeg" />
+    <EmbeddedResource Include="Images\more-priroda-den-brijuni-chorvatsko-0-Europa.jpg" />
+    <EmbeddedResource Include="Images\plitvice.jpg" />
+    <EmbeddedResource Include="Images\sjeverni velebit3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="gtk-gui\generated.cs" />
+    <Compile Include="MainWindow.cs" />
+    <Compile Include="gtk-gui\MainWindow.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Model\Korisnik.cs" />
+    <Compile Include="gtk-gui\Projekt.NacionalniParkoviWindow.cs" />
+    <Compile Include="Model\Rezervacija.cs" />
+    <Compile Include="Model\Termin.cs" />
+    <Compile Include="Model\Voditelj.cs" />
+    <Compile Include="View\PregledRezervacijaDialog.cs" />
+    <Compile Include="gtk-gui\Projekt.PregledRezervacijaDialog.cs" />
+    <Compile Include="gtk-gui\Projekt.PregledRezervacijaWindow.cs" />
+    <Compile Include="View\RezervacijaDialog.cs" />
+    <Compile Include="gtk-gui\Projekt.RezervacijaDialog.cs" />
+    <Compile Include="View\RezervacijaDialog2.cs" />
+    <Compile Include="gtk-gui\Projekt.RezervacijaDialog2.cs" />
+    <Compile Include="gtk-gui\Projekt.RezervacijaWindow.cs" />
+    <Compile Include="gtk-gui\Projekt.RezervacijaWindow2.cs" />
+    <Compile Include="View\ZaVoditeljeDialog.cs" />
+    <Compile Include="gtk-gui\Projekt.ZaVoditeljeDialog.cs" />
+    <Compile Include="gtk-gui\Projekt.ZaVoditeljeWindow.cs" />
+    <Compile Include="gtk-gui\Projekt.ZaVoditeljeWindow2.cs" />
+    <Compile Include="Presenter\RezervacijaNodeStore.cs" />
+    <Compile Include="Presenter\RezervacijaNode.cs" />
+    <Compile Include="View\RezervacijaWidget.cs" />
+    <Compile Include="gtk-gui\Projekt.RezervacijaWidget.cs" />
+    <Compile Include="View\PregledRezervacijaWidget.cs" />
+    <Compile Include="gtk-gui\Projekt.PregledRezervacijaWidget.cs" />
+    <Compile Include="View\NacionalniParkoviWidget.cs" />
+    <Compile Include="gtk-gui\Projekt.NacionalniParkoviWidget.cs" />
+    <Compile Include="View\ZaVoditeljeWidget.cs" />
+    <Compile Include="gtk-gui\Projekt.ZaVoditeljeWidget.cs" />
+    <Compile Include="Windowi test\NacionalniParkoviWindow.cs" />
+    <Compile Include="Windowi test\PregledRezervacijaWindow.cs" />
+    <Compile Include="Windowi test\RezervacijaWindow.cs" />
+    <Compile Include="Windowi test\RezervacijaWindow2.cs" />
+    <Compile Include="Windowi test\ZaVoditeljeWindow.cs" />
+    <Compile Include="View\ZaVoditeljeWindow2.cs" />
+    <Compile Include="View\ZaVoditeljeDialog2.cs" />
+    <Compile Include="gtk-gui\Projekt.ZaVoditeljeDialog2.cs" />
+    <Compile Include="View\ZaVoditeljeDialog3.cs" />
+    <Compile Include="gtk-gui\Projekt.ZaVoditeljeDialog3.cs" />
+    <Compile Include="View\PregledRezervacijaDialog2.cs" />
+    <Compile Include="gtk-gui\Projekt.PregledRezervacijaDialog2.cs" />
+    <Compile Include="Windowi test\RezervacijaStavke.cs" />
+    <Compile Include="Windowi test\TerminStavke.cs" />
+    <Compile Include="View\ZavoditeljeWindow3.cs" />
+    <Compile Include="gtk-gui\Projekt.ZavoditeljeWindow3.cs" />
+    <Compile Include="View\ZaVoditeljeDialog4.cs" />
+    <Compile Include="gtk-gui\Projekt.ZaVoditeljeDialog4.cs" />
+    <Compile Include="View\ZaVoditeljeWidgetDodajTermin.cs" />
+    <Compile Include="gtk-gui\Projekt.ZaVoditeljeWidgetDodajTermin.cs" />
+    <Compile Include="View\ZaVoditeljeWidgetPregledajRezervacije.cs" />
+    <Compile Include="gtk-gui\Projekt.ZaVoditeljeWidgetPregledajRezervacije.cs" />
+    <Compile Include="View\ZaVoditeljeWidgetIzbornik.cs" />
+    <Compile Include="gtk-gui\Projekt.ZaVoditeljeWidgetIzbornik.cs" />
+    <Compile Include="View\ZaVoditeljeWindow4.cs" />
+    <Compile Include="gtk-gui\Projekt.ZaVoditeljeWindow4.cs" />
+    <Compile Include="View\ZaVoditeljeDialogLogin.cs" />
+    <Compile Include="gtk-gui\Projekt.ZaVoditeljeDialogLogin.cs" />
+    <Compile Include="View\ZaVoditeljeDialog5.cs" />
+    <Compile Include="gtk-gui\Projekt.ZaVoditeljeDialog5.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Presenter\" />
+    <Folder Include="Model\" />
+    <Folder Include="View\" />
+    <Folder Include="Images\" />
+    <Folder Include="Windowi test\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bazapodataka.db" />
+    <None Include="sqlite3.def" />
+    <None Include="sqlite3.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
